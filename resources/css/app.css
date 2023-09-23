@@ -1,0 +1,93 @@
+@import url(sas.css);
+
+
+
+
+.sidebar-header{
+    height: var(--headerHeight);
+    display: flex;
+    align-items: center;
+    background-color: orange;
+    color: white;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    
+}
+.sidebar-header-title{
+    height: auto;
+}
+.sidebar-close{
+    display: none;
+}
+.dasboard-sidebar{
+    width: var(--dashboarSidebarWidth);
+    background-color: white;
+    position: sticky;
+    top: 0;
+    overflow-y: scroll;
+}
+
+.sidebar-body{
+    justify-content: start;
+    height: calc(100vh - var(--headerHeight));
+}
+.sidebar-item{
+    height: 40px;
+    align-items: center;
+    display: flex;
+    padding-left:10px;
+    padding-right: 10px;
+    justify-content: space-between;
+    color: var(--sectionColor);
+    font-size: var(--sectionFontSize);
+
+}
+.sidebar-item:hover{
+    background-color: var(--sectionHoverColor);
+    color: white;
+
+}
+.dashboard-header{
+    height: var(--headerHeight);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 30px !important;
+    justify-content: space-between;
+    background-color: var(--lightGrey);
+    position: sticky;
+    top: 0;
+}
+
+.header-item{
+    height: auto;
+    font-size: 20px;
+    color: black;
+    padding-left: 10px;
+}
+
+@media (min-width: 600px) {
+    .dasboard-sidebar{
+    visibility: visible !important;
+    transform: none !important;
+   
+}
+.dashboard-menu-btn{
+    display: none;
+}
+
+.dashboard-body{
+    width: 100%;
+    min-width: 600px;
+    background-color:red ;
+}
+    
+} 
+
+@media (max-width:599px) {
+    .sidebar-close{
+    display: block;
+}
+}
