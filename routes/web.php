@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('backend.dashboard');
+Route::controller(HomeController::class)->group(function(){
+    Route::get('/','index');
 });
 
 Route::get('/dashboard',function(){
@@ -29,3 +29,6 @@ Route::prefix('/dashboard')->group(function () {
         Route::get('files','index')->name('files');
     });
 });
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
