@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,21 +18,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::controller(HomeController::class)->group(function(){
-    Route::get('/','index');
+Route::controller(HomeController::class)->group(function () {
+    Route::get('/', 'index');
 });
+Route::get('signin', [LoginController::class, 'index'])->name('signin');
+Route::post('signin', [LoginController::class, 'submit'])->name('signin');
+Route::get('signup', [RegistrationController::class, 'index']);
+Route::post('signup/store', [RegistrationController::class, 'store']);
 
-Route::get('/dashboard',function(){
-    return 123;
-});
-Route::prefix('/dashboard')->group(function () {
-    Route::get('/a',function(){
-        return 123;
+Route::middleware('auth')->group(function () {
+    Route::get("dashboard", [DashboardController::class, 'index']);
+
+    //admin
+    Route::middleware(['admin'])->group(function () {
+        Route::get("admin", [AdminController::class, 'index']);
+        Route::prefix('admin')->group(function () {
+            Route::get("file", [AdminController::class, 'index']);
+        });
     });
-    Route::controller(FileController::class)->group(function(){
-        Route::get('files','index')->name('files');
-    });
 });
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

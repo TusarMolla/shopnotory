@@ -5,6 +5,10 @@
     --sectionColor: #464646fc;
     --sectionHoverColor: #7c7c7cfc;
     --sectionFontSize:16px;
+    --successColor:#009107;
+    --successColor2:#028109;
+    --secoundaryColor:#00A9EE;
+    --secoundaryColor2:#0091ca;
 }
 a{
     text-decoration: none;

@@ -1,7 +1,7 @@
 @extends('master')
 
 @section('header')
-    <link rel="stylesheet" href="{{ resources_path() . '/css/app.css' }}">
+    <link rel="stylesheet" href="{{ res_path() . '/css/app.css' }}">
 @endsection
 
 @section('body')
@@ -14,7 +14,7 @@
 
             @include('utility.backend.header')
             <div class="dashboard-body">
-                @include($page)
+                {{-- @include($page) --}}
             </div>
         </div>
 

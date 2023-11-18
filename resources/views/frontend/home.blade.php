@@ -2,6 +2,6 @@
 
 
 @section('body')
-<a href="{{url('login')}}">Login</a>
+<a href="{{url('signin')}}">Login</a>
     
 @endsection
