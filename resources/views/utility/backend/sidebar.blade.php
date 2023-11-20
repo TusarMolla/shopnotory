@@ -12,7 +12,7 @@
         
             <a class="sidebar-item" href="">Categories</a>
             <a class="sidebar-item" href="">Orders</a>
-            {{-- <a class="sidebar-item" href="{{route('files')}}">Files</a> --}}
+            <a class="sidebar-item {{areActiveRoutes(['admin.files','admin.files.create'])}}" href="{{url('admin/files')}}">Files</a>
         
 
             <a class="sidebar-item" href="">Users<i class="sidebar-item bi bi-chevron-right"></i></a>

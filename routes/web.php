@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\Auth\RegistrationController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,7 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::middleware(['admin'])->group(function () {
         Route::get("admin", [AdminController::class, 'index']);
         Route::prefix('admin')->group(function () {
-            Route::get("file", [AdminController::class, 'index']);
+            Route::get("files", [FileController::class, 'index'])->name("admin.files");
+            Route::get("files/create", [FileController::class, 'create'])->name("admin.files.create");
         });
     });
 });

@@ -7,7 +7,13 @@ use Illuminate\Http\Request;
 
 class FileController extends Controller
 {
-    public function index()  {
-        return view("backend");
+    public function index() {
+
+        return view('backend.files');
+        
+    }
+    public function create() {
+        return view('backend.create-file');
+        
     }
 }

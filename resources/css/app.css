@@ -1,12 +1,18 @@
 @import url(sas.css);
 
 
-.btn:focus,.btn:active {
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.btn:focus,
+.btn:active {
     outline: none !important;
     box-shadow: none;
- }
+}
 
-.sidebar-header{
+.sidebar-header {
     height: var(--headerHeight);
     display: flex;
     align-items: center;
@@ -15,15 +21,18 @@
     justify-content: space-between;
     position: sticky;
     top: 0;
-    
+
 }
-.sidebar-header-title{
+
+.sidebar-header-title {
     height: auto;
 }
-.sidebar-close{
+
+.sidebar-close {
     display: none;
 }
-.dasboard-sidebar{
+
+.dasboard-sidebar {
     width: var(--dashboarSidebarWidth);
     background-color: white;
     position: sticky;
@@ -31,29 +40,40 @@
     overflow-y: scroll;
 }
 
-.sidebar-body{
+.sidebar-body {
     justify-content: start;
     height: calc(100vh - var(--headerHeight));
 }
-.sidebar-item{
+
+.sidebar-item {
     height: 40px;
     align-items: center;
     display: flex;
-    padding-left:10px;
+    margin-bottom: 2px;
+    padding-left: 10px;
     padding-right: 10px;
     justify-content: space-between;
     color: var(--sectionColor);
     font-size: var(--sectionFontSize);
 
 }
-.sidebar-item:hover{
+
+.sidebar-item:hover {
     background-color: var(--sectionHoverColor);
     color: white;
-
 }
-.dashboard-header{
-    height: var(--headerHeight);
+
+.active {
+    background-color: var(--sectionHoverColor);
+    color: white;
+}
+
+/* .admin-header{
     width: 100%;
+    height: 100%;
+} */
+.dashboard-header {
+    height: var(--headerHeight);
     display: flex;
     align-items: center;
     color: black;
@@ -64,49 +84,54 @@
     top: 0;
 }
 
-.header-item{
+.header-item {
     height: auto;
     font-size: 20px;
     color: black;
     padding-left: 10px;
 }
 
-@media (min-width: 600px) {
-    .dasboard-sidebar{
-    visibility: visible !important;
-    transform: none !important;
-   
+.dashboard-body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
-.dashboard-menu-btn{
-    display: none;
+.dashboard-content {
+    padding-left: 10px;
+    padding-right: 10px;
+    
 }
 
-.dashboard-body{
-    width: 100%;
-    min-width: 600px;
-    background-color:red ;
+@media (min-width: 600px) {
+    .dasboard-sidebar {
+        visibility: visible !important;
+        transform: none !important;
+
+    }
+
+    .dashboard-menu-btn {
+        display: none;
+    }
 }
-    
-} 
 
 @media (max-width:599px) {
-    .sidebar-close{
-    display: block;
-}
+    .sidebar-close {
+        display: block;
+    }
 }
 
 
 /* login page  */
-.login-card{
+.login-card {
     max-width: 400px;
     min-width: 300px;
     margin: auto;
     padding: 16px;
-    box-shadow:0 4px 8px 0 rgba(0,0,0,0.2);
-    border-radius:10px ;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
-.submit-btn1{
+.submit-btn1 {
     width: 100%;
     height: 45px;
     border-radius: 30px;
@@ -114,13 +139,15 @@
     color: white;
     background-color: var(--successColor);
 }
-.submit-btn1:hover{
+
+.submit-btn1:hover {
     color: var(--successColor);
-    background-color:white;
+    background-color: white;
     border: 1px var(--successColor) solid;
     transition: 0.5s;
 }
-.submit-btn2{
+
+.submit-btn2 {
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -131,10 +158,12 @@
     display: block;
     background-color: var(--secoundaryColor);
 }
-.submit-btn2:hover{
+
+.submit-btn2:hover {
     color: var(--secoundaryColor);
-    background-color:white;
+    background-color: white;
     border: 1px var(--secoundaryColor) solid;
     transition: 0.5s;
 }
+
 /* login page end  */
