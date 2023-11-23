@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
         Route::prefix('admin')->group(function () {
             Route::get("files", [FileController::class, 'index'])->name("admin.files");
             Route::get("files/create", [FileController::class, 'create'])->name("admin.files.create");
+            Route::post("files/store", [FileController::class, 'store'])->name("admin.files.store");
         });
     });
 });
