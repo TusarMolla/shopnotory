@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FileController extends Controller
 {
     public function index() {
-
-        return view('backend.files');
+        $files = File::where("user_id",Auth::id())->get();
+        return view('backend.files',["files"=>$files]);
         
     }
     public function create() {
@@ -62,9 +63,9 @@ class FileController extends Controller
 
             $fileType = $type[$file->extension()];
             if($fileType){
+                $tmp_file = new  File();
+                $tmp_file->name=$file->hashName();
                 $path = $file->store("public");
-                $tmp_file = new  File();//file_name	location	type	extension	
-                $tmp_file->file_name=$file->hashName();
                 $tmp_file->location=$path;
                 $tmp_file->type=$fileType;
                 $tmp_file->extension=$file->extension();
